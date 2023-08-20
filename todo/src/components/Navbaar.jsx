@@ -6,11 +6,6 @@ export const Navbaar = ()=>{
    const navigate = useNavigate();
    React.useEffect(()=>{
     const userdata = JSON.parse(localStorage.getItem("userData"))||{};
-    if(userdata.login==="true"){
-        userdata.login = true;
-    }else{
-        userdata.login = false;
-    }
     setuserdata(userdata);
    },[]);
    const logoutUser = ()=>{
@@ -18,7 +13,7 @@ export const Navbaar = ()=>{
         ...pre,
         login:false
     }))
-    localStorage.setItem(JSON.stringify(user));
+    localStorage.setItem("userData", JSON.stringify({...user,login:false}));
     alert("Logout SuccessFull");
     navigate('/login')
    }
@@ -35,9 +30,9 @@ export const Navbaar = ()=>{
 
         </div>
         <div>
-            <Link onClick={()=>{
+            <h3 onClick={()=>{
                 logoutUser();
-            }} style={{display: user.login ? "block" : "none"}} to={'/login'}><h3>Logout</h3></Link>
+            }} style={{display: user.login ? "block" : "none"}}>Logout</h3>
         </div>
     </div>)
 }

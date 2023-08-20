@@ -1,7 +1,13 @@
-
+import { Navbaar } from "./Navbaar";
 export const Todoes = ()=>{
 
     return (<div>
-        Hello here will be all todos
+        <div>
+        <Navbaar/>
+        
+    </div>
+    <div>
+        all todos will be here
+    </div>
     </div>)
 }

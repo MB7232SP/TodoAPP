@@ -1,4 +1,6 @@
 import React from "react"
+import '../CSS/Login.css'
+import {Navbaar} from './Navbaar'
 import { useNavigate } from "react-router-dom";
 const details = {
     email:"",
@@ -26,7 +28,7 @@ export const Login = ()=>{
         if(userData && userData.email === email && userData.password===password){
             alert("Login successfull")
             userData.login = true;
-            localStorage.setItem(JSON.stringify(userData));
+            localStorage.setItem("userData",JSON.stringify(userData));
             navigate('/todos')
         }else{
             alert("user is not present");
@@ -35,9 +37,13 @@ export const Login = ()=>{
        }
    }
     return (
+       <div>
         <div>
+            <Navbaar/>
+        </div>
+         <div id="loginSignup">
            <form onChange={(e)=>Savechange(e.target)} action="Signupform">
-           <h1>Signup</h1>
+           <h1>Login</h1>
            <label htmlFor="email">Enter Email</label>
            <input type="text" name="email" value={user.email} placeholder="Enter Email" />
            <label htmlFor="email">Enter Password</label>
@@ -48,5 +54,6 @@ export const Login = ()=>{
            }} value="Submit" />
            </form>
         </div>
+       </div>
     )
 }

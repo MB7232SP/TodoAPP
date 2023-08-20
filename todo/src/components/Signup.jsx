@@ -1,4 +1,5 @@
 import React from "react"
+import { Navbaar } from "./Navbaar";
 import { useNavigate } from "react-router-dom";
 const details = {
     name:"",
@@ -32,6 +33,8 @@ export const Signup = ()=>{
    }
     return (
         <div>
+            <Navbaar/>
+            <div id="loginSignup">
            <form onChange={(e)=>Savechange(e.target)} action="Signupform">
            <h1>Signup</h1>
            <label htmlFor="email">Enter Name</label>
@@ -45,6 +48,7 @@ export const Signup = ()=>{
             CheckAndSaveDetails();
            }} value="Submit" />
            </form>
+        </div>
         </div>
     )
 }
