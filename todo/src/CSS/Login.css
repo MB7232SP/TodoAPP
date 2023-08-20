@@ -35,3 +35,14 @@ form input[type="submit"]{
     align-items: center;
     justify-content: center;
 }
+#loginSignup button{
+    background-color: blue;
+    outline: none;
+    border-color: 1px solid blue;
+    height: 34px;
+    color: white;
+    font-weight: 600;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+}
