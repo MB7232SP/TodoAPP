@@ -24,6 +24,7 @@ export const Navbaar = ()=>{
         <Link style={{display: user.login ? "none" : "block"}} to={'/signup'}><h3>Signup</h3></Link>
         
         <Link to={'/todos'}><h3>My Todos</h3></Link>
+        <Link to={'/dropdown'}><h3>Dropdown Practice</h3></Link>
         </div>
         <div>
         <h1>TODO APP</h1>
